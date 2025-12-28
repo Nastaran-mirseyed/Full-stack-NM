@@ -1,17 +1,17 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { model, Schema } from "mongoose";
 
 const taskModel = new Schema({
     title: {
         type: String,
-        required:[true,"title is require"]
+        required:[true,"title is required"]
     },
     deadline: {
         type: Date,
-        required:[true,"date is require"]
+        required:[true,"date is required"]
     },
     dirId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref:"Direcory"
+        ref:"Directory"
     },
     description: String,
     completed: Boolean,
@@ -19,4 +19,5 @@ const taskModel = new Schema({
     
 })
 
-export default  mongoose.model("Task", taskModel);
+const Task = model("Task", taskModel);
+export default Task;

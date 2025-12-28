@@ -1,10 +1,11 @@
-import mongoose, { Schema } from "mongoose";
+import{ model, Schema } from "mongoose";
 
 const directoryModel = new Schema({
     title: {
         type: String,
-        required: [true, "Title is require"]
+        required: [true, "Title is required"]
     }
 });
 
-export default mongoose.model('Directory', directoryModel);
+const Directory = model("Directory", directoryModel);
+export default Directory;

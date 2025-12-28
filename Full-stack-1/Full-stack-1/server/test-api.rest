@@ -1,0 +1,7 @@
+POST http://localhost:3001/directory
+Content-Type: application/json
+
+{
+  "title": "hobby"
+}
+#  GET http://localhost:3001/directory

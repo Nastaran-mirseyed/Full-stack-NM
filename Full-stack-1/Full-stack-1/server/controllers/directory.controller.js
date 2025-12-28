@@ -1,8 +1,8 @@
-import Direcory from "../models/directory.model.js";
+import Directory from "../models/directory.model.js";
 
 const getAllDirectory = async (req, res) => {
     try {
-        const response = await Direcory.find();
+        const response = await Directory.find();
         res.status(200).json(response)
         
     } catch (error) {
@@ -15,8 +15,8 @@ const getAllDirectory = async (req, res) => {
 const createDirectory = async (req, res) => {
     const data = req.body;
     try {
-        const response = await Direcory.create(data);
-        res.status(201).json(response);
+        const response = await Directory.create(data);
+        res.status(201).json(response);      
         
     } catch (error) {
         console.log(error);
@@ -28,7 +28,7 @@ const updateDirectory = async (req, res) => {
     const { id } = req.params;
     const data = req.body;
     try {
-        const response = await Direcory.findByIdAndUpdate(id, data);
+        const response = await Directory.findByIdAndUpdate(id, data);
         res.status(200).json(response)
     } catch (error) {
         console.log(error);
@@ -39,7 +39,7 @@ const updateDirectory = async (req, res) => {
 const deleteDirectory = async (req, res) => {
     const { id } = req.params;
     try {
-        await Direcory.findByIdAndDelete(id);
+        await Directory.findByIdAndDelete(id);
         res.status(200).end();
     } catch (error) {
         console.log(error);
