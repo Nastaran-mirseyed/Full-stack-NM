@@ -5,6 +5,7 @@ import logger from "./middleware/logger.js";
 import connectionDB from "./database/connectDB.js";
 import taskroutes from "./routes/task.route.js";
 import directoryroutes from "./routes/directory.route.js";
+import userroutes from "./routes/user.route.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 
 app.use("/task", taskroutes);
 app.use("/directory", directoryroutes);
+app.use("/user", userroutes)
 
 app.use((req, res) => {
     res.status(404).send({ error: 404, msg: "not found" })

@@ -1,7 +1,9 @@
-POST http://localhost:3001/directory
+PATCH  http://localhost:3001/user/695168a9051d05fa90e8f55b
 Content-Type: application/json
 
 {
-  "title": "hobby"
+  "userName":"",
+  "email":"mirseyed23@gmail.com",
+  "password":""
 }
 #  GET http://localhost:3001/directory

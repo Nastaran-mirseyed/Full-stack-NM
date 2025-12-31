@@ -13,6 +13,10 @@ const taskModel = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref:"Directory"
     },
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"User"
+    },
     description: String,
     completed: Boolean,
     important:Boolean,
